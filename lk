@@ -21,19 +21,25 @@ read doing
 
 case $doing in
 1)
-shred -v -f -u -z -n 20 /home/***/.bash_history /var/log/kern.log /var/log/macchanger.log /var/log/user.log /var/log/auth.log  &&  reboot # ВНИМАНИЕ!!! в начале строки укажите путь к файлу .bash_history!! стираем логи и перезагружаемся
+#shred -v -f -u -z -n 20 /home/***/.bash_history
+shred -v -f -u -z -n 20 /var/log/kern.log /var/log/macchanger.log /var/log/user.log /var/log/auth.log   
+reboot
 
 ;;
 2)
-shred -v -f -u -z -n 20 /home/***/.bash_history /var/log/kern.log /var/log/macchanger.log /var/log/user.log /var/log/auth.log ./lk /usr/local/bin/lk
+#shred -v -f -u -z -n 20 /home/***/.bash_history
+shred -v -f -u -z -n 20 /var/log/kern.log /var/log/macchanger.log /var/log/user.log /var/log/auth.log ./lk /usr/local/bin/lk
+
 
 ;;
 3)
-shred -v -f -u -z -n 20 /home/***/.bash_history /var/log/kern.log /var/log/macchanger.log /var/log/user.log /var/log/auth.log && shutdown now
+#shred -v -f -u -z -n 20 /home/***/.bash_history
+shred -v -f -u -z -n 20 /var/log/kern.log /var/log/macchanger.log /var/log/user.log /var/log/auth.log && shutdown now
 
 ;;
 4)
-shred -v -f -u -z -n 20 /home/***/.bash_history /var/log/kern.log /var/log/macchanger.log /var/log/user.log /var/log/auth.log  && halt
+#shred -v -f -u -z -n 20 /home/***/.bash_history
+shred -v -f -u -z -n 20 /var/log/kern.log /var/log/macchanger.log /var/log/user.log /var/log/auth.log  && halt
 
 ;;
 0)
