@@ -14,21 +14,26 @@ echo "*** ВНИМАНИЕ! БУДУТ БЕЗВОЗВРАТНО СТЕРТЫ Д�
 echo "1- Удалить LOG файлы и перезагрузка (kill logs and reboot)"
 echo "2- Удалить LOG файлы и убить Sindy :( (kill logs and kill Sindy)"
 echo "3- Удалить LOG файлы и выключить компьютер (kill logs and power off)"
+echo "4- Удалить LOG файлы, историю BASH и экстренно выключить компьютер"
 echo "0- Я передумал"
 
 read doing
 
 case $doing in
 1)
-shred -v -f -u -z -n 20 /home/sv404/.bash_history /var/log/kern.log /var/log/macchanger.log /var/log/user.log /var/log/auth.log  &&  reboot # ВНИМАНИЕ!!! в начале строки укажите путь к файлу .bash_history!! стираем логи и перезагружаемся
+shred -v -f -u -z -n 20 /home/***/.bash_history /var/log/kern.log /var/log/macchanger.log /var/log/user.log /var/log/auth.log  &&  reboot # ВНИМАНИЕ!!! в начале строки укажите путь к файлу .bash_history!! стираем логи и перезагружаемся
 
 ;;
 2)
-shred -v -f -u -z -n 20 /home/sv404/.bash_history /var/log/kern.log /var/log/macchanger.log /var/log/user.log /var/log/auth.log ./lk /usr/local/bin/lk
+shred -v -f -u -z -n 20 /home/***/.bash_history /var/log/kern.log /var/log/macchanger.log /var/log/user.log /var/log/auth.log ./lk /usr/local/bin/lk
 
 ;;
 3)
-shred -v -f -u -z -n 20 /home/sv404/.bash_history /var/log/kern.log /var/log/macchanger.log /var/log/user.log /var/log/auth.log && shutdown now
+shred -v -f -u -z -n 20 /home/***/.bash_history /var/log/kern.log /var/log/macchanger.log /var/log/user.log /var/log/auth.log && shutdown now
+
+;;
+4)
+shred -v -f -u -z -n 20 /home/***/.bash_history /var/log/kern.log /var/log/macchanger.log /var/log/user.log /var/log/auth.log  && halt
 
 ;;
 0)
