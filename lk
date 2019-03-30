@@ -1,0 +1,43 @@
+#!/bin/bash
+# Make sure only root can run our script
+if [[ $EUID -ne 0 ]]; then
+    echo -e "\e[31mThis script must be run as ROOT!
+ВНИМАНИЕ! ВЫ ДОЛЖНЫ ИМЕТЬ ROOT ПРАВА ДЛЯ ЗАПУСКА!\e[0m"
+          
+    exit 1
+fi
+clear
+echo "    --- MY NAME IS SINDY. I AM-LOG KILLER. DIRRECTORY OF SV404 ---
+                       404mist@protonmail.com"
+echo "*** ВНИМАНИЕ! БУДУТ БЕЗВОЗВРАТНО СТЕРТЫ ДАННЫЕ LOG ФАЙЛОВ И ИСТОРИЯ BASH ***
+                    ПОСЛЕ ЧЕГО СИСТЕМА БУДЕТ ПЕРЕЗАГРУЖЕНА!"
+echo "1- Удалить LOG файлы и перезагрузка (kill logs and reboot)"
+echo "2- Удалить LOG файлы и убить Sindy :( (kill logs and kill Sindy)"
+echo "3- Удалить LOG файлы и выключить компьютер (kill logs and power off)"
+echo "0- Я передумал"
+
+read doing
+
+case $doing in
+1)
+shred -v -f -u -z -n 20 /home/sv404/.bash_history /var/log/kern.log /var/log/macchanger.log /var/log/user.log /var/log/auth.log  &&  reboot # ВНИМАНИЕ!!! в начале строки укажите путь к файлу .bash_history!! стираем логи и перезагружаемся
+
+;;
+2)
+shred -v -f -u -z -n 20 /home/sv404/.bash_history /var/log/kern.log /var/log/macchanger.log /var/log/user.log /var/log/auth.log ./lk /usr/local/bin/lk
+
+;;
+3)
+shred -v -f -u -z -n 20 /home/sv404/.bash_history /var/log/kern.log /var/log/macchanger.log /var/log/user.log /var/log/auth.log && shutdown now
+
+;;
+0)
+clear
+echo "            FUCK YOUR SYSTEM! 
+      We are always one step ahead!"
+sleep 2
+clear
+exit
+
+esac
+
