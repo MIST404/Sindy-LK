@@ -1,5 +1,6 @@
 # Sindy-LK
 SINDY LOG KILLER
+presentation  https://youtu.be/e8j6wB0TPlg
 
 ВНИМАНИЕ!!! РАБОТАЕТ ТОЛЬКО С ПРАВАМИ ROOT!!! 
 /Этот скрипт уничтожает историю ввода команд терминала и критически важные
